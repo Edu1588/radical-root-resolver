@@ -509,7 +509,7 @@ function Landing() {
             <article
               key={s.title}
               className={`reveal glass-strong flex flex-col rounded-3xl p-7 transition-all duration-300 hover:-translate-y-2 ${
-                s.accent === "red" ? "hover:glow-red" : "hover:glow-blue"
+                s.accent === "red" ? "hover:shadow-[var(--shadow-glow-red)]" : "hover:shadow-[var(--shadow-glow-blue)]"
               }`}
             >
               <span
