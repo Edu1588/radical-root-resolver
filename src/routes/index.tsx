@@ -428,7 +428,7 @@ function Landing() {
             <p className="reveal">
               Com o tempo, a experiência de campo se transformou na capacidade de olhar além do que
               está acontecendo e buscar por que está acontecendo. Dessa forma de pensar nasceu o
-              Empresário Radical — não para ensinar a partir de teorias distantes da realidade, mas
+              Empresário Radical, não para ensinar a partir de teorias distantes da realidade, mas
               para compartilhar princípios, métodos e decisões de quem conhece o outro lado da mesa.
             </p>
             <p className="reveal font-semibold text-foreground">
@@ -663,22 +663,29 @@ function Section({
   id,
   kicker,
   title,
+  light,
   children,
 }: {
   id: string;
   kicker: string;
   title: string;
+  light?: boolean;
   children: React.ReactNode;
 }) {
   return (
-    <section id={id} className="relative mx-auto max-w-6xl scroll-mt-28 px-6 py-20">
-      <p className="reveal mb-3 text-xs font-semibold uppercase tracking-[0.3em] text-primary">
-        {kicker}
-      </p>
-      <h2 className="reveal mb-6 max-w-3xl text-2xl font-extrabold leading-tight tracking-tight sm:text-4xl">
-        {title}
-      </h2>
-      {children}
+    <section
+      id={id}
+      className={`relative scroll-mt-28 ${light ? "section-light" : ""}`}
+    >
+      <div className="mx-auto max-w-6xl px-6 py-20">
+        <p className="reveal mb-3 text-xs font-semibold uppercase tracking-[0.3em] text-primary">
+          {kicker}
+        </p>
+        <h2 className="reveal mb-6 max-w-3xl text-2xl font-extrabold leading-tight tracking-tight sm:text-4xl">
+          {title}
+        </h2>
+        {children}
+      </div>
     </section>
   );
 }
